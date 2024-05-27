@@ -1,0 +1,73 @@
+Just remember that %s are all about how much of a parent container to use, while vh/vw are always about how much of the screen/viewport to use.
+------------------------------------- - -----------------------------------------------------------------
+I have a wrapper div that is width: 100%. That is exactly the same as 100vw.
+I have a content div inside, which is width: 50%, which is exactly the same as50vw because the wrapper is 100% of the viewport.
+Now, If I set another div called content inner, and set width: 100vw, that will try to fill the whole viewport. What I’d need to do is set it to width: 100%, so that the content inner div is 100% of the content div width not the entire viewport.
+---------------------- --------------------- --------------------- ---------------------- ----------------
+
+In CSS, vmin stands for viewport minimum.
+The vmin function is used to set the size of an element as a percentage of the minimum value between the viewport width or height.
+For example, if the viewport is 1000px wide and 800px high, if we set the width of an element to 30vmin, 
+it will be 30% of the height. So 30% of 800px is 240px.
+---------------------------- -------------------- ---------------------- -----------------------------------------
+Select all elements with class="example":
+document.querySelectorAll(".example");
+
+The querySelectorAll() method returns a NodeList.
+The querySelectorAll() method throws a SYNTAX_ERR exception if the selector(s) is invalid
+
+NodeList
+A NodeList is an array-like collection (list) of nodes.
+The nodes in the list can be accessed by index. The index starts at 0.
+The length Poperty returns the number of nodes in the list
+--------------- ------------------- --------------------------------- ----------------------------------------
+
+No, there is no document.getElementsById method in JavaScript.
+
+The document.getElementById method returns a single element with the specified ID.
+ If there are multiple elements with the same ID, the method returns the first one it finds.
+
+If you want to select multiple elements with the same name or class, you can use the following methods:
+
+document.getElementsByName: This method returns a collection of elements with the specified name.
+document.getElementsByClassName: This method returns a collection of elements with the specified class.
+document.querySelectorAll: This method returns a collection of elements that match the specified CSS selector.
+--------------------- ----------------------- ----------------------- ----------------------------------------------------
+
+https://www.geeksforgeeks.org/difference-between-innertext-and-innerhtml/
+
+---------------- ------------------------------- ------------------------------------
+
+
+//JBH box ko click kiya tbh html meh change ho
+//humeh kaise pta chle ga ke kya dehna hai "X" ya "0" ..vo humeh turn variable seh pta chle ga
+if(turn0)
+    {    // player 0 ke turn hai
+
+        box.innerText ="0";
+        // agleh baar ke liye turn0 true nhi hone chahiye isliye
+        turn0 = false;
+    }
+    else{
+        // player 1 ke turn hai
+
+        box.innerText="X";
+        turn0=true;
+    }
+//                      =======================>>>>
+            box.disabled = true ;      // jisse hum sirf ek box peh sirf ek baar click kr paaye
+            CheckWinner();    //============== box peh click krne peh yeh check ho ke winner kaun hai====uss ke liye func banaya
+
+}) ;   //======================= ; ========================== IMP
+});    //======================= ; ========================== IMP
+
+const CheckWinner = () => {
+    // humeh pta chle ga keh winner kaun hai
+    // humeh ek-ek winning pattern ko check krna padeh ga
+    for(let pattern of winningPattern)
+        {
+            console.log(pattern);  // button pe click krne peh saareh winningPattern aaye geh
+            console.log(pattern[0],pattern[1],pattern[2]);
+        }
+
+}
